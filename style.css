@@ -62,19 +62,32 @@ html {
 .card_button {
   width: 250px;
   height: 80px;
-  background: url(/assets/add_to_cart.svg) #000000;
+  background: url(assets/add_to_cart.svg) #000000;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .card_button:hover {
-  background: url(/assets/add_to_cart.svg) #9D8665;
+  background: url(assets/add_to_cart.svg) #9D8665;
   cursor: pointer;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+.card_title {
+  margin-top: 10px;
+  text-align: center;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 20px;
+  color: #710707;
+}
+
 .card_price {
+  margin-top: 20px;
+  margin-bottom: 5px;
   text-align: center;
   font-family: Lato;
   font-style: normal;
