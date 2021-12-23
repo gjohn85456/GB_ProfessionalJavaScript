@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.burger-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background:  #ff9933;
+}
+
+.burger-title {   
+    margin-left: 20px;
+    margin-right: 20px; 
+    font-family: Forum;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 31px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color:#4dff4d;
+    text-decoration: none;
+}
+
+.size-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.size-burger-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.size-burger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.size-input {
+    width: 20px;
+    height: 20px;
+}
+
+.size-burger-wrapper {
+    display: flex;
+    align-items: center;
+}
