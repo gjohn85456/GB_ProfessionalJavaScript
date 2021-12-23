@@ -1,4 +1,3 @@
-
 const products = [
     { id: 1, title: 'gamepad1', img: 'gamepad1.jpg', price: 1000 },
     { id: 2, title: 'gamepad2', img: 'gamepad2.jpg', price: 1200 },

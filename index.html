@@ -6,84 +6,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Best shop</title>
 </head>
 
 <body>
-    <header>
-        <div class="header container">
-            <h1 class="title">Welcome</h1>
-        </div>
-    </header>
-    <main>
-        <section class="shop">
-            <div class="showcase container1">
-                <!-- <div class="card">
-                    <img class="card_img" src="assets/gamepad1.jpg" alt="gamepad2" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button">
-                    </button>
+    <div id="app">
+        <header>
+            <div class="header container ">
+                <div class="logo">Best shop</div>
+                <h1 class="title">Welcome</h1>
+                <div class="right-part-header">
+                    <form action="#" class="search">
+                        <input type="text" class="search_field" v-model="userSearch">
+                        <button class="search_btn" @click="filter(userSearch)" type="submit"></button>
+                    </form>
+                    <button class="basket" type="button"></button>
                 </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/gamepad2.jpg" alt="gamepad2" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button">
-                    </button>
-                </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/gamepad3.jpg" alt="gamepad3" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button">
-                    </button>
-                </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/keyboard1.jpg" alt="keyboard1" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button">
-                    </button>
-                </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/keyboard2.png" alt="keyboard2" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button">
-                    </button>
-                </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/keyboard3.png" alt="keyboard3" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button">
-                    </button>
-                </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/notebook1.png" alt="notebook1" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button"></button>
-                </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/notebook2.png" alt="notebook2" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button"></button>
-                </div>
-
-                <div class="card">
-                    <img class="card_img" src="assets/notebook3.png" alt="notebook3" width="250" height="150">
-                    <div class="card_price">Price &#8381;</div>
-                    <button class="card_button"></button>
-                </div> -->
-
             </div>
-        </section>
-    </main>
-    <footer></footer>
 
-    <script src="app.js"></script>
+        </header>
+        <main>
+            <section class="shop">
+                <div class="showcase container1">
+                    <div class="card" v-for="product of products" :key="product.id">
+                        <img class="card_img" :src="product.img" alt="some img" width="250" height="150">
+                        <div class="card_title">{{product.title}}</div>
+                        <div class="card_price">{{product.price}} &#8381;</div>
+                        <button class="card_button" @click="addProduct(product)"></button>
+                    </div>
+                    <!-- <div class="card">
+                        <img class="card_img" src="assets/gamepad1.jpg" alt="gamepad2" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button">
+                        </button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/gamepad2.jpg" alt="gamepad2" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button">
+                        </button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/gamepad3.jpg" alt="gamepad3" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button">
+                        </button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/keyboard1.jpg" alt="keyboard1" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button">
+                        </button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/keyboard2.png" alt="keyboard2" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button">
+                        </button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/keyboard3.png" alt="keyboard3" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button">
+                        </button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/notebook1.png" alt="notebook1" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button"></button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/notebook2.png" alt="notebook2" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button"></button>
+                    </div>
+    
+                    <div class="card">
+                        <img class="card_img" src="assets/notebook3.png" alt="notebook3" width="250" height="150">
+                        <div class="card_price">Price &#8381;</div>
+                        <button class="card_button"></button>
+                    </div> -->
+
+                </div>
+            </section>
+        </main>
+        <footer class="footer container">
+            <section class="rights">
+                <h4>© 2021 All Rights Reserved</h4>
+            </section>
+        </footer>
+    </div>
+
+    <!-- <script src="js/app_oop.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/vue.js"></script>
 </body>
 
 </html>
