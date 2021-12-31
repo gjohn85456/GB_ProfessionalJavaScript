@@ -16,10 +16,11 @@
                 <div class="logo">Best shop</div>
                 <h1 class="title">Welcome</h1>
                 <div class="right-part-header">
-                    <form action="#" class="search" @submit.prevent="filter">
+                    <search></search>
+                    <!-- <form action="#" class="search" @submit.prevent="filter">
                         <input type="text" class="search_field" v-model="userSearch">
                         <button class="search_btn" type="submit"></button>
-                    </form>
+                    </form> -->
                     <button class="basket-btn" type="button" @click="showCart= !showCart"></button>
                     <!-- <div class="basket-form" v-show="showCart">
                         <p class="basket-form_content basket-form_text" v-if="!cartItems.length">
@@ -44,7 +45,7 @@
 
                         </div>
                     </div> -->
-                    <cart :cart-item="cartItems" :visibility="showCart">
+                    <cart :cart_items="cartItems" :visibility="showCart">
                     </cart>
                 </div>
 
@@ -73,6 +74,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/vueComp_Product.js"></script>
     <script src="js/vueComp_Cart.js"></script>
+    <script src="js/vueComp_Search.js"></script>
     <script src="js/vueMain.js"></script>
 </body>
 
