@@ -66,6 +66,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   padding-right: 40px;
+  z-index: 1;
 }
 
 .search_field {
@@ -92,17 +93,80 @@ html {
 }
 
 .right-part-header {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.basket {
+.basket-btn {
   padding-right: 80px;
   width: 30px;
   height: 30px;
   background: url(assets/shopping_basket.svg) no-repeat;
   border: none;
+  z-index: 1;
+}
+
+.basket-form {
+  position: absolute;
+}
+
+.basket-form_content {
+  position: relative;
+  background-color: #9D8665;
+  width: 300px;
+  border-radius: 10px;
+  top: 50px;
+  padding-bottom: 10px;
+}
+
+.basket-form_content:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid;
+  border-bottom-color: #9D8665;
+  left: 50%;
+  bottom: 100%;
+  margin-left: 80px;
+  background: none;
+}
+
+.basket-form_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.basket-form_item_center {
+  padding-left: 10px;
+}
+
+.basket-form_item_end {
+  padding-left: 20px;
+}
+
+.basket-form_item_end_btn {
+  margin-left: 20px;
+  margin-top: 5px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: url(assets/close.svg) no-repeat #FFFFFF;
+}
+
+.basket-form_text {
+  width: 300px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.image-two svg {
+  fill: darkgreen;
 }
 
 .showcase {
@@ -116,6 +180,7 @@ html {
 }
 
 .card {
+  place-self: center;
   width: 250px;
   border: solid #CAAA7D 10px;
 }

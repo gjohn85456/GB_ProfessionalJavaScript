@@ -56,6 +56,7 @@ html{
     display: flex;
     align-items: center;
     padding-right: 40px;
+    z-index: 1;
 
     &_field {
         width: 150px;
@@ -83,15 +84,70 @@ html{
 }
 
 .right-part-header {
+    position: relative;
     display: flex;
 }
-.basket {
+.basket-btn {
     padding-right: 80px;
     width: 30px;
     height: 30px;
     background: url(assets/shopping_basket.svg) no-repeat;
     border: none;
+    z-index: 1;
 }
+.basket-form {
+    position: absolute;
+    &_content {
+        position: relative;
+        background-color: #9D8665;
+        width: 300px;
+        border-radius: 10px;
+        top: 50px;
+        padding-bottom: 10px;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 10px solid;
+            border-bottom-color:#9D8665;
+            left: 50%;
+            bottom: 100%;
+            margin-left: 80px;
+            background: none;
+        }
+    }
+    &_item {
+        display: flex;
+        padding-top: 10px;
+        padding-left: 10px;
+        &_center {
+            padding-left: 10px;
+        }
+        &_end {
+            padding-left: 20px;
+            &_btn {
+                margin-left: 20px;
+                margin-top: 5px;
+                width:30px;
+                height: 30px;
+                border: none;                
+                background: url(assets/close.svg) no-repeat #FFFFFF;
+            }
+        }
+    }
+    &_text{
+        width: 300px;
+        padding-top: 10px;
+        text-align: center;
+
+    }
+}
+
+.image-two svg {
+    fill: darkgreen;
+  }
+
 
 .showcase {
     display: grid;
@@ -100,9 +156,11 @@ html{
     grid-row-gap: 50px;
     margin-top: 30px;
 
+
 }
 
 .card {
+    place-self: center;
     width: 250px;
     border: solid #CAAA7D 10px;
 }

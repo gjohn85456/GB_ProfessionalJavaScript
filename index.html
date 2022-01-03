@@ -16,85 +16,51 @@
                 <div class="logo">Best shop</div>
                 <h1 class="title">Welcome</h1>
                 <div class="right-part-header">
-                    <form action="#" class="search">
+                    <search></search>
+                    <!-- <form action="#" class="search" @submit.prevent="filter">
                         <input type="text" class="search_field" v-model="userSearch">
-                        <button class="search_btn" @click="filter(userSearch)" type="submit"></button>
-                    </form>
-                    <button class="basket" type="button"></button>
+                        <button class="search_btn" type="submit"></button>
+                    </form> -->
+                    <button class="basket-btn" type="button" @click="showCart= !showCart"></button>
+                    <!-- <div class="basket-form" v-show="showCart">
+                        <p class="basket-form_content basket-form_text" v-if="!cartItems.length">
+                            Пусто
+                        </p>
+                        <div class="basket-form_content" v-if="cartItems.length">
+                            <div v-for="item of cartItems" :key="item.id">
+                                <div class="basket-form_item">
+                                    <img :src="item.img" alt="" width="80px" height="60px">
+                                    <div class="basket-form_item_center">
+                                        <p>{{item.title}}</p>
+                                        <p>Quantity: {{item.quantity}}</p>
+                                        <p>{{item.prise}} &#8381;</p>
+                                    </div>
+                                    <div class="basket-form_item_end">
+                                        <div>{{item.price*item.quantity}}</div>
+                                        <button class="basket-form_item_end_btn"
+                                            @click="remove(item)">&times</button></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> -->
+                    <cart :cart_items="cartItems" :visibility="showCart">
+                    </cart>
                 </div>
-            </div>
 
         </header>
         <main>
             <section class="shop">
-                <div class="showcase container1">
-                    <div class="card" v-for="product of products" :key="product.id">
+                <products :products="filtered" @add-product="addProduct"></products>
+                <!-- <div class="showcase container1">
+                    <div class="card" v-for="product of filetred" :key="product.id">
                         <img class="card_img" :src="product.img" alt="some img" width="250" height="150">
                         <div class="card_title">{{product.title}}</div>
                         <div class="card_price">{{product.price}} &#8381;</div>
                         <button class="card_button" @click="addProduct(product)"></button>
                     </div>
-                    <!-- <div class="card">
-                        <img class="card_img" src="assets/gamepad1.jpg" alt="gamepad2" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button">
-                        </button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/gamepad2.jpg" alt="gamepad2" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button">
-                        </button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/gamepad3.jpg" alt="gamepad3" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button">
-                        </button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/keyboard1.jpg" alt="keyboard1" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button">
-                        </button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/keyboard2.png" alt="keyboard2" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button">
-                        </button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/keyboard3.png" alt="keyboard3" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button">
-                        </button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/notebook1.png" alt="notebook1" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button"></button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/notebook2.png" alt="notebook2" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button"></button>
-                    </div>
-    
-                    <div class="card">
-                        <img class="card_img" src="assets/notebook3.png" alt="notebook3" width="250" height="150">
-                        <div class="card_price">Price &#8381;</div>
-                        <button class="card_button"></button>
-                    </div> -->
-
-                </div>
+                </div> -->
             </section>
         </main>
         <footer class="footer container">
@@ -106,7 +72,10 @@
 
     <!-- <script src="js/app_oop.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/vue.js"></script>
+    <script src="js/vueComp_Product.js"></script>
+    <script src="js/vueComp_Cart.js"></script>
+    <script src="js/vueComp_Search.js"></script>
+    <script src="js/vueMain.js"></script>
 </body>
 
 </html>
